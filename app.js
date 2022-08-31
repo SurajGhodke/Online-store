@@ -33,13 +33,19 @@ app.use(morgan("tiny"));
 
 //import all routes here
 const home = require("./routes/home");
+const user = require("./routes/user");
 
 //router middleware
 app.use("/api/v1", home);
+app.use("/api/v1", user);
 
-app.get("/", (req, res) => {
-  res.render("home");
+app.get("/signuptest", (req, res) => {
+  res.render("signuptest");
 });
+
+// app.get("/", (req, res) => {
+//   res.render("home");
+// });
 
 //export app js
 module.exports = app;
